@@ -24,6 +24,7 @@ $dsn = "mysql:dbname={$opt['d']};host={$opt['h']};port={$opt['p']}";
 $db = new PDO($dsn, $opt['u'], $opt['k']);
 $db->query("SET NAMES utf8");
 
+!is_dir("./dictionary") && mkdir('./dictionary');
 $file = "./dictionary/databaseDictionary_" . date('YmdHis') . ".md";
 $fileHandle = fopen($file, "wb+");
 $fileContent = "";
@@ -92,7 +93,7 @@ sql;
     $queryHandle = $db->query($sql);
     $columns = $queryHandle->fetchAll(PDO::FETCH_CLASS);
     foreach ($columns as $column) {
-        foreach($column as &$item){
+        foreach ($column as &$item) {
             $item = str_escape($item, '/_([a-z0-9]+)/', '\\\$0');
         }
         unset($item);
