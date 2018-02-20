@@ -54,7 +54,7 @@ $progressBar = new \ProgressBar\Manager(0, sizeof($tables));
 $progressBar->setFormat('生成数据表总览 : %current%/%max% [%bar%] %percent%% %eta%');
 
 $fileContent .= "|TABLE_SCHEMA|TABLE_NAME|ENGINE|CREATE_TIME|TABLE_COLLATION|TABLE_COMMENT|\n";
-$fileContent .= "|------------|:-----|:-----|:-----|:-----|:-----|:-----|\n";
+$fileContent .= "|------------|:-----|:-----|:-----|:-----|:-----|\n";
 foreach ($tables as $table) {
     foreach ($table as &$item) {
         $item = str_escape($item, '/_([a-z0-9]+)/', '\\\$0');
