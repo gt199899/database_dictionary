@@ -1,0 +1,15 @@
+{
+  "require": {
+    "guiguiboy/php-cli-progress-bar":"~0.0.4"
+  },
+  "autoload": {
+
+  },
+  "minimum-stability": "stable",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
